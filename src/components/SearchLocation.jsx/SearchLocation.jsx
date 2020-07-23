@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { GoogleComponent } from 'react-google-location'
-import GooglePlacesAutocomplete from 'react-google-places-autocomplete'
-import 'react-google-places-autocomplete/dist/index.min.css'
+
+import './SearchLocation.scss'
 
 const API_KEY = 'AIzaSyA92b9a2VUQ16zGYs2TdMnGvN1m73NBUm4'
 

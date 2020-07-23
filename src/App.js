@@ -1,5 +1,5 @@
 import React from 'react'
-import Test from './test'
+import SearchLocation from './components/SearchLocation.jsx/SearchLocation'
 
 import './App.css'
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Test />
+        <SearchLocation />
       </header>
     </div>
   )
