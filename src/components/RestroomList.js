@@ -5,10 +5,8 @@ import RestroomCard from './RestroomCard'
 
 export default function RestroomList({ restRooms }) {
   let history = useHistory()
-  console.log(restRooms)
 
   const handleOnClick = (restRoom) => {
-    console.log('sdlj', restRoom)
     localStorage.setItem(restRoom.id, JSON.stringify(restRoom))
     history.push(`/restroom/${restRoom.id}`)
   }

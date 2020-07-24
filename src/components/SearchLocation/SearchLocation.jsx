@@ -5,6 +5,7 @@ import './SearchLocation.scss'
 
 const SearchLocation = ({ setCoord }) => {
   const [place, setPlace] = useState('')
+  console.log('nav: ', navigator)
   return (
     <div>
       <GoogleComponent
