@@ -6,6 +6,7 @@ import SearchLocation from '../components/SearchLocation/SearchLocation'
 import useRestRooms from '../hooks/useRestrooms'
 
 import './Restroom.scss'
+import AppSpinner from '../components/AppSpinner'
 
 export default function Restroom() {
   const [coord, setCoord] = useState({ lat: '', lng: '' })
@@ -25,7 +26,7 @@ export default function Restroom() {
   return (
     <Container>
       <SearchLocation setCoord={setCoord} />
-      <RestroomList restRooms={restRooms} />
+      {loading ? <AppSpinner /> : <RestroomList restRooms={restRooms} />}
     </Container>
   )
 }
