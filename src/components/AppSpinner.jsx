@@ -6,14 +6,11 @@ import './AppSpinner.scss'
 const AppSpinner = () => {
   return (
     <div id="overlay" style={{ width: '100%', textAlign: 'center' }}>
-      <Spinner
-        className="app-spinner"
-        animation="border"
-        variant="dark"
-        role="status"
-      >
-        <span className="sr-only">Loading...</span>
-      </Spinner>
+      <i
+        className="fa fa-spinner fa-pulse fa-3x fa-fw app-spinner"
+        aria-hidden="true"
+      ></i>
+      <span className="sr-only">Loading...</span>
     </div>
   )
 }

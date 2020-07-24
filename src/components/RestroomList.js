@@ -1,5 +1,4 @@
 import React from 'react'
-import { CardDeck } from 'react-bootstrap'
 import { useHistory } from 'react-router-dom'
 import RestroomCard from './RestroomCard'
 

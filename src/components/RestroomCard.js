@@ -3,7 +3,11 @@ import { Card } from 'react-bootstrap'
 
 export default function RestroomCard({ handleOnClick, restRoom }) {
   return (
-    <Card key={restRoom.id} onClick={() => handleOnClick(restRoom)}>
+    <Card
+      key={restRoom.id}
+      style={{ margin: '10px 0px' }}
+      onClick={() => handleOnClick(restRoom)}
+    >
       <Card.Body>
         <Card.Title>{restRoom.name}</Card.Title>
         <Card.Text>

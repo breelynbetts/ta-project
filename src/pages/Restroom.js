@@ -15,12 +15,15 @@ export default function Restroom() {
   useEffect(() => {
     console.log('api')
     console.log(coord)
-    navigator.geolocation.getCurrentPosition(function (position) {
-      setCoord({
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
+    if (!coord.lat) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        console.log('in here')
+        setCoord({
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        })
       })
-    })
+    }
   }, [coord, restRooms, setCoord])
 
   return (
