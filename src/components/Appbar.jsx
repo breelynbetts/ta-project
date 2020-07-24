@@ -21,7 +21,7 @@ function AppBar() {
         </Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link>
-            <Link to="restrooms">Find</Link>
+            <Link to="/restrooms">Find</Link>
           </Nav.Link>
         </Nav>
       </Container>

@@ -1,34 +1,41 @@
 import React, { useState, useEffect } from 'react'
 import RestroomList from '../components/RestroomList'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
+import AppSpinner from '../components/AppSpinner'
 
 import SearchLocation from '../components/SearchLocation/SearchLocation'
 import useRestRooms from '../hooks/useRestrooms'
 
 import './Restroom.scss'
-import AppSpinner from '../components/AppSpinner'
 
 export default function Restroom() {
   const [coord, setCoord] = useState({ lat: '', lng: '' })
   const [restRooms, loading, error] = useRestRooms(coord)
 
+  const setToUsersCurrentLocation = () => {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      console.log('in here')
+      setCoord({
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      })
+    })
+  }
+
   useEffect(() => {
     console.log('api')
     console.log(coord)
     if (!coord.lat) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        console.log('in here')
-        setCoord({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        })
-      })
+      setToUsersCurrentLocation()
     }
   }, [coord, restRooms, setCoord])
 
   return (
     <Container>
-      <SearchLocation setCoord={setCoord} />
+      <SearchLocation
+        setCoord={setCoord}
+        setToUsersCurrentLocation={setToUsersCurrentLocation}
+      />
       {loading ? <AppSpinner /> : <RestroomList restRooms={restRooms} />}
     </Container>
   )

@@ -10,3 +10,10 @@
 i.fa.fa-compass {
   font-size: 35px;
 }
+
+.autocomplete-dropdown-container {
+  position: absolute;
+  top: 55px;
+  z-index: 1000;
+  border: 1px solid black;
+}
