@@ -20,7 +20,15 @@ const RestroomDetail = ({ match }) => {
         <Card.Text>
           Distance from you: {restRoom.distance.toFixed(2)} miles
         </Card.Text>
-        <RestRoomMap restRoom={restRoom} />
+        <div style={{ width: '100%', height: '400px' }}>
+          <RestRoomMap
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
+            loadingElement={<div style={{ height: `100%` }} />}
+            containerElement={<div style={{ height: `100%` }} />}
+            mapElement={<div style={{ height: `100%` }} />}
+            restRoom={restRoom}
+          />
+        </div>
       </Card.Body>
       <Card.Footer>
         <small className="text-muted">

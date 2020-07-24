@@ -1,40 +1,31 @@
-import React from 'react'
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react'
+import React, { useState } from 'react'
+import {
+  withGoogleMap,
+  withScriptjs,
+  GoogleMap,
+  Marker,
+  InfoWindow,
+} from 'react-google-maps'
 
-export class MapContainer extends React.Component {
-  render() {
-    console.log(
-      'this ',
-      this.props.restRoom.latitude,
-      this.props.restRoom.longitude
-    )
-    return (
-      <Map
-        style={{ width: '600px', display: 'block' }}
-        google={this.props.google}
-        zoom={14}
-        center={{
-          lat: this.props.restRoom.latitude,
-          lng: this.props.restRoom.longitude,
-        }}
-      >
-        <Marker
-          position={{
-            lat: this.props.restRoom.latitude,
-            lng: this.props.restRoom.longitude,
-          }}
-        />
-        <Marker />
-        <InfoWindow onClose={this.onInfoWindowClose}>
-          <div>
-            <h1>hello</h1>
-          </div>
-        </InfoWindow>
-      </Map>
-    )
+function Map({ restRoom }) {
+  const [infoBoxOpen, setInfoBoxOpen] = useState(false)
+  const onMarkerClick = () => {
+    setInfoBoxOpen(true)
   }
-}
 
-export default GoogleApiWrapper({
-  apiKey: 'AIzaSyA92b9a2VUQ16zGYs2TdMnGvN1m73NBUm4',
-})(MapContainer)
+  return (
+    <GoogleMap
+      defaultZoom={10}
+      defaultCenter={{ lat: restRoom.latitude, lng: restRoom.longitude }}
+    >
+      <Marker
+        onClick={onMarkerClick}
+        position={{
+          lat: restRoom.latitude,
+          lng: restRoom.longitude,
+        }}
+      />
+    </GoogleMap>
+  )
+}
+export default withScriptjs(withGoogleMap(Map))

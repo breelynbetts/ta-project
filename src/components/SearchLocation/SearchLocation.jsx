@@ -3,14 +3,12 @@ import { GoogleComponent } from 'react-google-location'
 
 import './SearchLocation.scss'
 
-const API_KEY = 'AIzaSyA92b9a2VUQ16zGYs2TdMnGvN1m73NBUm4'
-
 const SearchLocation = ({ setCoord }) => {
   const [place, setPlace] = useState('')
   return (
     <div>
       <GoogleComponent
-        apiKey={API_KEY}
+        apiKey={process.env.REACT_APP_GOOGLE_KEY}
         language={'en'}
         country={'country:in|country:us'}
         coordinates={true}
