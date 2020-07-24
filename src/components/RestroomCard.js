@@ -20,7 +20,10 @@ export default function RestroomCard({ handleOnClick, restRoom }) {
       </Card.Body>
       <Card.Footer>
         <small className="text-muted">
-          Up vote:{restRoom.upvote} Down vote:{restRoom.downvote}
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>:{" "}
+          <p className="vote-text">{restRoom.upvote}</p>
+          <i class="fa fa-thumbs-down" aria-hidden="true"></i>:{" "}
+          <p className="vote-text">{restRoom.downvote}</p>
         </small>
       </Card.Footer>
     </Card>
