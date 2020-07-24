@@ -18,7 +18,7 @@ export default function RestroomCard({ handleOnClick, restRoom }) {
           Distance from you: {restRoom.distance.toFixed(2)} miles
         </Card.Text>
       </Card.Body>
-      <Card.Footer>
+      <Card.Footer className="card-footer">
         <small className="text-muted">
           <i class="fa fa-thumbs-up" aria-hidden="true"></i>:{" "}
           <p className="vote-text">{restRoom.upvote}</p>
