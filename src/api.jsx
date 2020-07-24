@@ -1,7 +1,5 @@
 import axios from 'axios'
 
-const instance = axios.create({
-  baseURL: 'www.refugerestrooms.org/api/',
-})
+axios.defaults.baseURL = 'http://www.refugerestrooms.org/api'
 
-export default instance
+export default axios

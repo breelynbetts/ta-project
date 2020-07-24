@@ -1,12 +1,17 @@
-import React from "react";
-import { CardDeck } from "react-bootstrap";
-import RestroomCard from "./RestroomCard";
-// import { getRestaurants } from "../fakeApi";
+import React from 'react'
+import { CardDeck } from 'react-bootstrap'
+import RestroomCard from './RestroomCard'
 
-export default function RestroomList() {
+export default function RestroomList({ restRooms }) {
+  console.log(restRooms)
+
+  if (!restRooms) {
+    return <div>loading ....</div>
+  }
   return (
-    <CardDeck>
-      <RestroomCard name="Coffee Bean and Tea Leaf" />
-    </CardDeck>
-  );
+    <div>
+      {restRooms &&
+        restRooms.map((restRoom) => <RestroomCard restRoom={restRoom} />)}
+    </div>
+  )
 }

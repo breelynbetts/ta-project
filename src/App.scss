@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
 .root {
   background-image: url(./images/bathroom.png);
-  height: 100%;
+  height: 100vh;
   width: 100%;
   background-size: cover;
   display: flex;
@@ -12,7 +12,7 @@
 }
 
 .title {
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 900;
   font-size: 288px;
@@ -28,7 +28,7 @@
   margin-top: 6vh;
   margin-bottom: 10vh;
 
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: lighter;
   font-size: 20px;

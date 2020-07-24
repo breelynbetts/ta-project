@@ -1,25 +1,29 @@
 import React, { useEffect, useState } from 'react'
-import instance from '../api'
-import axios from 'axios'
+import axios from '../api'
 
-export default (lat, lng) => {
+export default ({ lat, lng }) => {
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(true)
-  const [restRooms, setRestRooms] = useState(null)
+  const [restRooms, setRestRooms] = useState([])
+
   useEffect(() => {
     async function fetchRestRooms() {
       try {
         const response = await axios.get(
-          `v1/restrooms/by_location?lat=${lat}&lng=${lng}`
+          `/v1/restrooms/by_location?lat=${lat}&lng=${lng}`
         )
-        setRestRooms(response)
+        console.log(response)
+
+        setRestRooms(response.data)
       } catch (error) {
         setError(error)
         console.log(error)
       }
       setLoading(false)
     }
-    fetchRestRooms()
+    if (!!lat && !!lng) {
+      fetchRestRooms()
+    }
   }, [lat, lng])
 
   return [restRooms, loading, error]

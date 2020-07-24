@@ -5,7 +5,7 @@ import './SearchLocation.scss'
 
 const API_KEY = 'AIzaSyA92b9a2VUQ16zGYs2TdMnGvN1m73NBUm4'
 
-const Test = () => {
+const SearchLocation = ({ setCoord }) => {
   const [place, setPlace] = useState('')
   return (
     <div>
@@ -18,6 +18,9 @@ const Test = () => {
         locationListStyle={'custom-style-list'}
         onChange={(e) => {
           console.log(e)
+          if (e.coordinates) {
+            setCoord(e.coordinates)
+          }
           setPlace(e)
         }}
       />
@@ -25,9 +28,4 @@ const Test = () => {
   )
 }
 
-export default Test
-
-//   <GooglePlacesAutocomplete
-//     onSelect={console.log}
-//     apiKey="AIzaSyA92b9a2VUQ16zGYs2TdMnGvN1m73NBUm4"
-//   />
+export default SearchLocation
