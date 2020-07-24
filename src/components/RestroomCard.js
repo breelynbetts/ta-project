@@ -7,7 +7,7 @@ export default function RestroomCard({ handleOnClick, restRoom }) {
       key={restRoom.id}
       style={{ margin: "10px 0px" }}
       onClick={() => handleOnClick(restRoom)}
-      className="card"
+      className="text-center"
     >
       <Card.Body className="card-body">
         <Card.Title>{restRoom.name}</Card.Title>
