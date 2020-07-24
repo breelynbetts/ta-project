@@ -10,6 +10,7 @@ const RestroomDetail = ({ match }) => {
     // }
   }, [match.params.id])
 
+  console.log(restRoom.directions === "")
   return (
     <Container>
       <Card.Body>
@@ -20,6 +21,12 @@ const RestroomDetail = ({ match }) => {
         <Card.Text>
           Distance from you: {restRoom.distance.toFixed(2)} miles
         </Card.Text>
+        {restRoom.directions === "" ? "" : <Card.Text>
+          Directions: {restRoom.directions} 
+        </Card.Text>}
+        {restRoom.comment === "" ? "" : <Card.Text>
+          Comment: {restRoom.comment} 
+        </Card.Text>} 
         <div style={{ width: '100%', height: '400px' }}>
           <RestRoomMap
             googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
