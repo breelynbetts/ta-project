@@ -1,21 +1,21 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 
-export default function RestroomCard({
-  restRoom: { name, street, distance, state, upvote, downvote },
-}) {
+export default function RestroomCard({ handleOnClick, restRoom }) {
   return (
-    <Card>
+    <Card key={restRoom.id} onClick={() => handleOnClick(restRoom)}>
       <Card.Body>
-        <Card.Title>{name}</Card.Title>
+        <Card.Title>{restRoom.name}</Card.Title>
         <Card.Text>
-          {street}, {state}{' '}
+          {restRoom.street}, {restRoom.state}{' '}
         </Card.Text>
-        <Card.Text>Distance from you: {distance.toFixed(2)} miles</Card.Text>
+        <Card.Text>
+          Distance from you: {restRoom.distance.toFixed(2)} miles
+        </Card.Text>
       </Card.Body>
       <Card.Footer>
         <small className="text-muted">
-          Up vote:{upvote} Down vote:{downvote}
+          Up vote:{restRoom.upvote} Down vote:{restRoom.downvote}
         </small>
       </Card.Footer>
     </Card>

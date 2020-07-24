@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import Restroom from './pages/Restroom'
+import RestroomDetail from './pages/RestroomDetail'
 
 export default function Routing() {
   return (
@@ -14,6 +15,7 @@ export default function Routing() {
           <Route path="/restrooms">
             <Restroom />
           </Route>
+          <Route path="/restroom/:id" component={RestroomDetail} />
         </Switch>
       </div>
     </Router>
