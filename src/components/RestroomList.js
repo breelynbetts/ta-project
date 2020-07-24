@@ -1,24 +1,25 @@
-import React from 'react'
-import { useHistory } from 'react-router-dom'
-import RestroomCard from './RestroomCard'
+import React from "react";
+import { useHistory } from "react-router-dom";
+import RestroomCard from "./RestroomCard";
+import { CardColumns } from "react-bootstrap";
 
 export default function RestroomList({ restRooms }) {
-  let history = useHistory()
+  let history = useHistory();
 
   const handleOnClick = (restRoom) => {
-    localStorage.setItem(restRoom.id, JSON.stringify(restRoom))
-    history.push(`/restroom/${restRoom.id}`)
-  }
+    localStorage.setItem(restRoom.id, JSON.stringify(restRoom));
+    history.push(`/restroom/${restRoom.id}`);
+  };
 
   if (!restRooms) {
-    return <div>loading ....</div>
+    return <div>loading ....</div>;
   }
   return (
-    <div>
+    <CardColumns>
       {restRooms &&
         restRooms.map((restRoom) => (
           <RestroomCard handleOnClick={handleOnClick} restRoom={restRoom} />
         ))}
-    </div>
-  )
+    </CardColumns>
+  );
 }
