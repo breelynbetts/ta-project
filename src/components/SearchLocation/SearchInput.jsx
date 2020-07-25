@@ -34,21 +34,21 @@ export default function SearchInput({ setCoord }) {
                 className: 'location-search-input',
               })}
             />
-            <div className="autocomplete-dropdown-container">
+            <div
+              className={`autocomplete-dropdown-container ${
+                suggestions.length > 0 ? 'show' : ''
+              }`}
+            >
               {loading && <div>Loading...</div>}
               {suggestions.map((suggestion) => {
                 const className = suggestion.active
-                  ? 'suggestion-item--active'
+                  ? 'suggestion-item active'
                   : 'suggestion-item'
-                // inline style for demonstration purpose
-                const style = suggestion.active
-                  ? { backgroundColor: '#fafafa', cursor: 'pointer' }
-                  : { backgroundColor: '#ffffff', cursor: 'pointer' }
+
                 return (
                   <div
                     {...getSuggestionItemProps(suggestion, {
                       className,
-                      style,
                     })}
                   >
                     <span>{suggestion.description}</span>

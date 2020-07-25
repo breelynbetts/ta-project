@@ -16,11 +16,11 @@ function renderTooltip(props) {
 const SearchLocation = ({ setCoord, setToUsersCurrentLocation }) => {
   console.log('nav: ', navigator)
   return (
-    <Form.Row className="align-items-center">
-      <Col xs="10">
+    <Form.Row className="align-items-center" style={{ margin: '20px 0' }}>
+      <Col xs="11">
         <SearchInput setCoord={setCoord} />
       </Col>
-      <Col xs="2">
+      <Col xs="1" style={{ margin: '0' }}>
         <OverlayTrigger
           placement="top"
           delay={{ show: 250, hide: 400 }}
