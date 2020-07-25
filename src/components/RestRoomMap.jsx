@@ -15,7 +15,7 @@ function Map({ restRoom }) {
 
   return (
     <GoogleMap
-      defaultZoom={10}
+      defaultZoom={15}
       defaultCenter={{ lat: restRoom.latitude, lng: restRoom.longitude }}
     >
       <Marker

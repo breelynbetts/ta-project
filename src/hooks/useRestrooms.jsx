@@ -12,7 +12,7 @@ export default ({ lat, lng }) => {
         const response = await axios.get(
           `/v1/restrooms/by_location?lat=${lat}&lng=${lng}`
         )
-        console.log(response)
+        console.log('is loading: ', loading)
 
         setRestRooms(response.data)
       } catch (error) {
@@ -24,7 +24,7 @@ export default ({ lat, lng }) => {
     if (!!lat && !!lng) {
       fetchRestRooms()
     }
-  }, [lat, lng])
+  }, [lat, lng, loading])
 
   return [restRooms, loading, error]
 }
