@@ -30,7 +30,6 @@ export default function Restroom() {
     }
   }, [coord, restRooms, setCoord]);
 
-  console.log("COORD", coord);
   return (
     <Container>
       <SearchLocation
