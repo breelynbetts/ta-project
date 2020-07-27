@@ -2,7 +2,7 @@
 
 .root {
   background-image: url(./images/bathroom.png);
-  height: 100vh;
+  height: 100%;
   width: 100%;
   background-size: cover;
   display: flex;
@@ -15,7 +15,7 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 900;
-  font-size: 288px;
+  font-size: 275px;
   line-height: 300px;
   color: #ffffff;
   margin-top: 5vh;
@@ -48,7 +48,7 @@
 }
 
 .text-center {
-  width: 30%;  
+  width: 100%;  
 }
 
 .card-footer {
@@ -58,4 +58,16 @@
 .vote-text {
   display: inline-block;
   margin-right: 10px
+}
+
+@media (min-width: 600px) {
+  .text-center {
+    width: 44%;  
+  }
+}
+
+@media (min-width: 800px) {
+  .text-center {
+    width: 30%;  
+  }
 }
