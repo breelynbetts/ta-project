@@ -1,3 +1,19 @@
 .card-body {
   cursor: pointer;
 }
+
+.text-center {
+  width: 100%;  
+}
+
+@media (min-width: 600px) {
+  .text-center {
+    width: 44%;  
+  }
+}
+
+@media (min-width: 800px) {
+  .text-center {
+    width: 30%;  
+  }
+}

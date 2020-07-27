@@ -13,6 +13,7 @@ const RestroomDetail = ({ match }) => {
   console.log(restRoom.directions === "")
   return (
     <Container>
+      <Card className="center">
       <Card.Body>
         <Card.Title>{restRoom.name}</Card.Title>
         <Card.Text>
@@ -39,9 +40,13 @@ const RestroomDetail = ({ match }) => {
       </Card.Body>
       <Card.Footer>
         <small className="text-muted">
-          Up vote:{restRoom.upvote} Down vote:{restRoom.downvote}
+          <i class="fa fa-thumbs-up" aria-hidden="true"></i>:{" "}
+          <p className="vote-text">{restRoom.upvote}</p>
+          <i class="fa fa-thumbs-down" aria-hidden="true"></i>:{" "}
+          <p className="vote-text">{restRoom.downvote}</p>
         </small>
       </Card.Footer>
+      </Card>
     </Container>
   )
 }
