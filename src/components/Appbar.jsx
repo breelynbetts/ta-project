@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import { Container, Navbar, Nav } from 'react-bootstrap'
+import { Container, Navbar, Nav, Button } from 'react-bootstrap'
 
 import Logo from '../images/logo.png'
 
@@ -21,7 +21,7 @@ function AppBar() {
         </Navbar.Brand>
         <Nav className="mr-auto">
           <Nav.Link>
-            <Link to="/restrooms">Find</Link>
+            <Link to="/restrooms"><Button variant="dark">Locate a Restroom Near You</Button></Link>
           </Nav.Link>
         </Nav>
       </Container>
