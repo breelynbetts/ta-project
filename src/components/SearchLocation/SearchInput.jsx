@@ -7,9 +7,7 @@ import PlacesAutocomplete, {
   getLatLng,
 } from 'react-places-autocomplete'
 
-Geocode.setApiKey( "AIzaSyCybPwWYdLmuLlBkW1T3MEMaeQACmt05RU"
-  // process.env.REACT_APP_GOOGLE_KEY
-  )
+Geocode.setApiKey(process.env.REACT_APP_GOOGLE_KEY)
 
 export default function SearchInput({ setCoord }) {
   const [address, setAddress] = useState('')

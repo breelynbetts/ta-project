@@ -29,7 +29,7 @@ const RestroomDetail = ({ match }) => {
         </Card.Text>} 
         <div style={{ width: '100%', height: '400px' }}>
           <RestRoomMap
-            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyCybPwWYdLmuLlBkW1T3MEMaeQACmt05RU`}
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
             loadingElement={<div style={{ height: `100%` }} />}
             containerElement={<div style={{ height: `100%` }} />}
             mapElement={<div style={{ height: `100%` }} />}
